@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+.MovieDetailsContainer{
+  padding: 240px 0;
+  display: flex;
+  flex-direction: column; // Google "flexbox" to learn more
+  align-items: center;
+}
+.MovieTitle{
+  text-align: center;
+}
+.MovieGenre{
+  text-align: center;
+}
+.MoviePoster{
+  text-align: center;
+}
+.MovieRated{
+  text-align: center;
+}
