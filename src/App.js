@@ -6,7 +6,6 @@ import { movieData } from './components/movieData';
 function App() {
 	return (
 		<div>
-			{/* <MovieDetails /> */}
 			<MovieDetails props={movieData} />
 		</div>
 	);
