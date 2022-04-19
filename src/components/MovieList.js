@@ -1,7 +1,7 @@
 import MovieCard from './MovieCard';
 
 export default function MovieList(props) {
-	console.log();
+	console.log(props.movieList);
 
 	return (
 		<div className='movielist'>
