@@ -1,8 +1,12 @@
 import poster from '../photos/AvengersPoster.jpg';
 
-export default function MovieDetails({ props }) {
+export default function MovieDetails({ props, selectedMovie }) {
+	console.log('This is:', selectedMovie);
 	return (
 		<div className='MovieDetailsContainer'>
+			{/* {movie.Search.map((data, index) => (
+				<div key={index}>{data.Title}</div>
+			))} */}
 			<div className='MovieCard'>
 				<div className='MovieTitle'>{props.Title}</div>
 				<div className='ImdbRating'>{props.imdbRating}</div>
