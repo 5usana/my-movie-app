@@ -3,6 +3,15 @@ import { useState, useEffect } from 'react';
 
 export default function MovieForm(props) {
 	const [movieList, setMovieList] = useState([]);
+	const [searchMovie, setSearchMovie] = useState('');
+
+	function handleSubmit(event) {
+		event.preventDefault();
+		const payload = {
+			searchMovie: searchMovie,
+		};
+		console.log('paylod is:', payload);
+	}
 
 	useEffect(() => {
 		const getMoviesByName = async (name) => {
@@ -13,7 +22,7 @@ export default function MovieForm(props) {
 			const response = await fetch(url);
 			// return an array of movies with a matching title from OMDb API
 			const data = await response.json();
-			console.log(data);
+			// console.log(data);
 			setMovieList(data.Search);
 		};
 		getMoviesByName('batman');
@@ -21,6 +30,23 @@ export default function MovieForm(props) {
 
 	return (
 		<div>
+			<form onSubmit={handleSubmit}>
+				<div className='Form-InputWrapper'>
+					<label className='Label' htmlFor='Movie Search'>
+						Search Movie
+					</label>
+					<input
+						className='Input'
+						name='Movie Title'
+						type='text'
+						value={searchMovie}
+						onChange={(event) => setSearchMovie(event.target.value)}
+					/>
+				</div>
+				<button type='submit' className='Button'>
+					Submit
+				</button>
+			</form>
 			<MovieList movieList={movieList} />
 		</div>
 	);
