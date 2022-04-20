@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 export default function MovieCard(props) {
 	console.log(props.movie);
 	return (
