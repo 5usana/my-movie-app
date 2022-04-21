@@ -1,9 +1,11 @@
 import MovieList from './MovieList';
 import { useState, useEffect } from 'react';
+import Modal from './Modal';
 
 export default function MovieForm(props) {
 	const [movieList, setMovieList] = useState([]);
 	const [searchMovie, setSearchMovie] = useState('');
+	const [modalActive, setModalActive] = useState(false);
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -48,6 +50,7 @@ export default function MovieForm(props) {
 				</button>
 			</form>
 			<MovieList movieList={movieList} />
+			<Modal movieList={movieList} />
 		</div>
 	);
 }
