@@ -1,11 +1,13 @@
 import './App.scss';
 import React from 'react';
-import MovieForm from './components/MovieForm';
+import MovieSearchForm from './components/MovieSearchForm';
+import SearchBar from './components/SearchBar';
 
 function App() {
 	return (
 		<div>
-			<MovieForm />
+			<MovieSearchForm />
+			<SearchBar />
 		</div>
 	);
 }

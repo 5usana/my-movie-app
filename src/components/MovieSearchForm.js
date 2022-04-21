@@ -1,11 +1,11 @@
 import MovieList from './MovieList';
 import { useState, useEffect } from 'react';
-import Modal from './Modal';
+// import Modal from './Modal';
 
-export default function MovieForm(props) {
+export default function MovieSearchForm(props) {
 	const [movieList, setMovieList] = useState([]);
-	const [searchMovie, setSearchMovie] = useState('');
-	const [modalActive, setModalActive] = useState(false);
+	const [searchMovie, setSearchMovie] = useState('batman');
+	// const [modalActive, setModalActive] = useState(false);
 
 	function handleSubmit(event) {
 		event.preventDefault();
@@ -27,15 +27,15 @@ export default function MovieForm(props) {
 			// console.log(data);
 			setMovieList(data.Search);
 		};
-		getMoviesByName('batman');
-	}, []);
+		getMoviesByName(searchMovie);
+	}, [searchMovie]);
 
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
 				<div className='Form-InputWrapper'>
-					<label className='Label' htmlFor='Movie Search'>
-						Search Movie
+					<label className='Label' htmlFor='Movie Title'>
+						Movie Title:
 					</label>
 					<input
 						className='Input'
@@ -50,7 +50,7 @@ export default function MovieForm(props) {
 				</button>
 			</form>
 			<MovieList movieList={movieList} />
-			<Modal movieList={movieList} />
+			{/* <Modal movieList={movieList} /> */}
 		</div>
 	);
 }
