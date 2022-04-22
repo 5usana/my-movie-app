@@ -2,13 +2,13 @@ import MovieList from './MovieList';
 import { useState, useEffect } from 'react';
 // import Modal from './Modal';
 
-export default function MovieSearchForm(props) {
+export default function MovieSearchForm() {
 	const [movieList, setMovieList] = useState([]);
 	const [searchMovie, setSearchMovie] = useState('batman');
 	// const [modalActive, setModalActive] = useState(false);
 
-	function handleSubmit(event) {
-		event.preventDefault();
+	function handleSubmit(e) {
+		e.preventDefault();
 		const payload = {
 			searchMovie: searchMovie,
 		};
@@ -19,12 +19,12 @@ export default function MovieSearchForm(props) {
 		const getMoviesByName = async (name) => {
 			let apiKey = '62c9fe58';
 			// accessing the API
-			const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${'batman'}`;
+			const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${name}`;
 			// Get an object of detailed information about the specified movie
 			const response = await fetch(url);
 			// return an array of movies with a matching title from OMDb API
 			const data = await response.json();
-			// console.log(data);
+			console.log(data);
 			setMovieList(data.Search);
 		};
 		getMoviesByName(searchMovie);
@@ -38,7 +38,7 @@ export default function MovieSearchForm(props) {
 						Movie Title:
 					</label>
 					<input
-						className='Input'
+						className='Movie-Input'
 						name='Movie Title'
 						type='text'
 						value={searchMovie}
@@ -46,10 +46,11 @@ export default function MovieSearchForm(props) {
 					/>
 				</div>
 				<button type='submit' className='Button'>
-					Submit
+					Search
 				</button>
 			</form>
 			<MovieList movieList={movieList} />
+
 			{/* <Modal movieList={movieList} /> */}
 		</div>
 	);
