@@ -1,10 +1,11 @@
 import MovieList from './MovieList';
 import { useState, useEffect } from 'react';
-// import Modal from './Modal';
+import Modal from './Modal';
 
 export default function MovieSearchForm() {
 	const [movieList, setMovieList] = useState([]);
 	const [searchMovie, setSearchMovie] = useState('batman');
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	// const [modalActive, setModalActive] = useState(false);
 
 	function handleSubmit(e) {
@@ -42,13 +43,21 @@ export default function MovieSearchForm() {
 						name='Movie Title'
 						type='text'
 						value={searchMovie}
+						minlength='1'
 						onChange={(event) => setSearchMovie(event.target.value)}
 					/>
 				</div>
 				<button type='submit' className='Button'>
 					Search
 				</button>
+				<button
+					className='Button'
+					type='button'
+					onClick={() => setIsModalOpen(true)}>
+					Open Movie Modal
+				</button>
 			</form>
+			<Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
 			<MovieList movieList={movieList} />
 
 			{/* <Modal movieList={movieList} /> */}
