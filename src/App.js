@@ -1,14 +1,18 @@
-// import logo from './logo.svg';
 import './App.scss';
-import MovieDetails from './components/MovieDetails';
-import { movieData } from './components/movieData';
+import GlobalStyle from './style/globalStyles';
+import React from 'react';
+import MovieSearchDisplay from './components/MovieSearchDisplay';
 
-function App() {
+function App({ searchMovie, setSearchMovie, setMovieList }) {
 	return (
-		<div>
-			{/* <MovieDetails /> */}
-			<MovieDetails props={movieData} />
-		</div>
+		<>
+			<GlobalStyle />
+			<MovieSearchDisplay
+				searchMovie={searchMovie}
+				setSearchMovie={setSearchMovie}
+				setMovieList={setMovieList}
+			/>
+		</>
 	);
 }
 

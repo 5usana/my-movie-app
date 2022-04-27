@@ -1,58 +1,42 @@
-.MovieDetailsContainer{
-  // padding: 240px 0;
-  display: flex;
-  flex-direction: column; // Google "flexbox" to learn more
-  // align-items: center;
-}
-.MovieCard{
-  display: flex;
-  flex-direction: column;
-  // align-items: center;
-  box-shadow: 0px 4px 8px #c8c5dc;
-  border: 1px solid #080e67;
-  border-radius: 10px;
-  width: 40vw;
-  padding: 20px;
-}
-.MoviePoster{
-   flex-grow: 1;
-}
-.MovieTitle{
-  // text-align: center;
-  font-weight: bold;
-  font-size: x-large;
-}
-.ImdbRating{
-  color: rgb(39, 95, 225);
-  font-weight: bold;
-  font-size: x-large;
+//replaced most css into styled components
 
-  padding: 8px;
-  border-radius: 4px;
-}
-.MovieGenre{
-  background-color: lightgrey;
-  padding: 8px;
-  border-radius: 4px;
-}
-.MovieRated{
-  text-align: center;
-  background-color: lightgrey;
-  padding: 8px;
-  border-radius: 4px;
-}
-.MovieGenre{
-  background-color: lightgrey;
-  padding: 8px;
-  border-radius: 4px;
-}
-.Runtime{
-  background-color: lightgrey;
-  padding: 8px;
-  border-radius: 4px;
-}
-.list{
-  // text-align: center;
-  font-weight: bold;
-  font-size: large;
-}
+//Full movie details styling, reconfigure once Modal is setup
+// .MovieTitle{
+//   text-align: center;
+//   font-weight: bold;
+//   font-size: x-large;
+// }
+// .ImdbRating{
+//   color: rgb(39, 95, 225);
+//   font-weight: bold;
+//   font-size: x-large;
+
+//   padding: 8px;
+//   border-radius: 4px;
+// }
+// .MovieGenre{
+//   background-color: lightgrey;
+//   padding: 8px;
+//   border-radius: 4px;
+// }
+// .MovieRated{
+//   text-align: center;
+//   background-color: lightgrey;
+//   padding: 8px;
+//   border-radius: 4px;
+// }
+// .MovieGenre{
+//   background-color: lightgrey;
+//   padding: 8px;
+//   border-radius: 4px;
+// }
+// .Runtime{
+//   background-color: lightgrey;
+//   padding: 8px;
+//   border-radius: 4px;
+// }
+// .list{
+//   // text-align: center;
+//   font-weight: bold;
+//   font-size: large;
+// }
