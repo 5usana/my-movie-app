@@ -1,10 +1,20 @@
 import MovieList from './MovieList';
 import { useState, useEffect } from 'react';
 import MyButton from '../style/StyledComponents';
+import styled from 'styled-components';
+ 
+
+ 
+
 
 const API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
 
-export default function MovieSearchForm({ props }) {
+// styling with styled components here
+const FormInputWrapper = styled.div`
+	padding: 20px;
+`;
+
+export default function MovieSearchDisplay({ props }) {
 	const [movieList, setMovieList] = useState([]);
 	const [searchMovie, setSearchMovie] = useState('');
 	// const [modalActive, setModalActive] = useState(false);
@@ -36,12 +46,9 @@ export default function MovieSearchForm({ props }) {
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
-				<div className='Form-InputWrapper'>
-					<label className='Label' htmlFor='Movie Title'>
-						Search Movie:
-					</label>
+				<FormInputWrapper className='Form-InputWrapper'>
+					<label htmlFor='Movie Title'>Search Movie:</label>
 					<input
-						className='Movie-Input'
 						name='Movie Title'
 						type='text'
 						value={searchMovie}
@@ -49,11 +56,9 @@ export default function MovieSearchForm({ props }) {
 						onChange={(event) => setSearchMovie(event.target.value)}
 					/>
 					<MyButton type='submit'>Submit</MyButton>
-				</div>
+				</FormInputWrapper>
 			</form>
 			<MovieList movieList={movieList} />
-
-			{/* <Modal movieList={movieList} /> */}
 		</div>
 	);
 }

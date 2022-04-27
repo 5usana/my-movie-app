@@ -1,13 +1,13 @@
 import './App.scss';
 import GlobalStyle from './style/globalStyles';
 import React from 'react';
-import MovieSearchForm from './components/MovieSearchForm';
+import MovieSearchDisplay from './components/MovieSearchDisplay';
 
 function App({ searchMovie, setSearchMovie, setMovieList }) {
 	return (
 		<>
 			<GlobalStyle />
-			<MovieSearchForm
+			<MovieSearchDisplay
 				searchMovie={searchMovie}
 				setSearchMovie={setSearchMovie}
 				setMovieList={setMovieList}

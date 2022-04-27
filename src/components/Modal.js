@@ -1,7 +1,8 @@
-import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
 import React from 'react';
 import { useEffect } from 'react';
 import ReactModal from 'react-modal';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const modalStyles = {
 	overlay: {
@@ -36,8 +37,8 @@ const Modal = ({ isModalOpen, setIsModalOpen }) => {
 					<div
 						className='Modal-CloseButtonWrapper'
 						onClick={() => setIsModalOpen(false)}>
-						{/* <FontAwesomeIcon icon={faXmark} size='lg' */}
-						{/* /> */}
+						{' '}
+						CLOSE X{/* <FontAwesomeIcon icon={faXmark} size='lg' /> */}
 					</div>
 				</div>
 			</ReactModal>
