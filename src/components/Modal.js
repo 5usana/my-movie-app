@@ -1,3 +1,4 @@
+import { toBePartiallyChecked } from '@testing-library/jest-dom/dist/matchers';
 import React from 'react';
 import { useEffect } from 'react';
 import ReactModal from 'react-modal';
@@ -14,6 +15,7 @@ const modalStyles = {
 		height: 600,
 		inset: 0,
 		padding: 0,
+		color: 'black',
 	},
 };
 

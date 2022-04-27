@@ -1,14 +1,12 @@
 import MovieList from './MovieList';
 import { useState, useEffect } from 'react';
-import Modal from './Modal';
+import MyButton from '../style/StyledComponents';
 
 const API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
 
-export default function MovieSearchForm() {
-	
+export default function MovieSearchForm({ props }) {
 	const [movieList, setMovieList] = useState([]);
 	const [searchMovie, setSearchMovie] = useState('');
-	const [isModalOpen, setIsModalOpen] = useState(false);
 	// const [modalActive, setModalActive] = useState(false);
 
 	function handleSubmit(e) {
@@ -25,7 +23,6 @@ export default function MovieSearchForm() {
 		const response = await fetch(url);
 		// return an array of movies with a matching title from OMDb API
 		const data = await response.json();
-
 		// console.log(data);
 		if (data.Search) {
 			setMovieList(data.Search);
@@ -41,7 +38,7 @@ export default function MovieSearchForm() {
 			<form onSubmit={handleSubmit}>
 				<div className='Form-InputWrapper'>
 					<label className='Label' htmlFor='Movie Title'>
-						Movie Title:
+						Search Movie:
 					</label>
 					<input
 						className='Movie-Input'
@@ -51,18 +48,9 @@ export default function MovieSearchForm() {
 						minlength='1'
 						onChange={(event) => setSearchMovie(event.target.value)}
 					/>
+					<MyButton type='submit'>Submit</MyButton>
 				</div>
-				<button type='submit' className='Button'>
-					Search
-				</button>
-				<button
-					className='Button'
-					type='button'
-					onClick={() => setIsModalOpen(true)}>
-					Open Movie Modal
-				</button>
 			</form>
-			<Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
 			<MovieList movieList={movieList} />
 
 			{/* <Modal movieList={movieList} /> */}
