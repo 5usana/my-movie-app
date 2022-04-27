@@ -1,17 +1,18 @@
 .MoviesContainer{
+   border: 3px solid #b41616;
   padding: 10px 0;
   display: flex;
-  flex-direction: column; 
-  align-items: center;
+  flex-flow: nowrap;
+  align-content: center;
 }
 .MovieCard{
-  display: inline-block;
-  // flex-direction: column;
- 
+  
+  
+  justify-content: space-evenly;
+  border: 3px solid #4e9c1e;
   box-shadow: 0px 4px 8px #c8c5dc;
-  border: 1px solid #080e67;
   border-radius: 10px;
-  width: 40vw;
+  width: 30vw;
   padding: 20px;
 }
 .MoviePoster{

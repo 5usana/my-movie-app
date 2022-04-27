@@ -2,9 +2,12 @@ import MovieList from './MovieList';
 import { useState, useEffect } from 'react';
 import Modal from './Modal';
 
+const API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
+
 export default function MovieSearchForm() {
+	
 	const [movieList, setMovieList] = useState([]);
-	const [searchMovie, setSearchMovie] = useState('batman');
+	const [searchMovie, setSearchMovie] = useState('');
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	// const [modalActive, setModalActive] = useState(false);
 
@@ -17,9 +20,7 @@ export default function MovieSearchForm() {
 	}
 
 	const getMoviesByName = async (name) => {
-		let apiKey = '62c9fe58';
-		// accessing the API
-		const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${name}`;
+		const url = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${name}`;
 		// Get an object of detailed information about the specified movie
 		const response = await fetch(url);
 		// return an array of movies with a matching title from OMDb API

@@ -1,7 +1,7 @@
 export default function MovieDetails({ props, selectedMovie }) {
 	// console.log('This is:', selectedMovie);
 	return (
-		<div className='MoviesContainer'>
+		<div className='SingleMovieContainer'>
 			<div className='MovieCard'>
 				<div className='MovieTitle'>{props.Title}</div>
 				<div className='ImdbRating'>{props.imdbRating}</div>

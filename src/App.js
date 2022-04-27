@@ -1,18 +1,21 @@
 import './App.scss';
 import React from 'react';
 import MovieSearchForm from './components/MovieSearchForm';
+import styled from 'styled-components';
 
-// import SearchBar from './components/SearchBar';
+export const Body = styled.div`
+	background-color: black;
+`;
 
 function App({ searchMovie, setSearchMovie, setMovieList }) {
 	return (
-		<div>
+		<Body>
 			<MovieSearchForm
 				searchMovie={searchMovie}
 				setSearchMovie={setSearchMovie}
 				setMovieList={setMovieList}
 			/>
-		</div>
+		</Body>
 	);
 }
 

@@ -4,7 +4,7 @@ export default function MovieList({ movieList }) {
 	// console.log(props.movieList);
 
 	return (
-		<div className='MoviesList'>
+		<div className='MoviesContainer'>
 			{movieList.map((movie) => (
 				<MovieCard movie={movie} />
 			))}
