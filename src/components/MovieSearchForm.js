@@ -16,18 +16,22 @@ export default function MovieSearchForm() {
 		console.log('paylod is:', payload);
 	}
 
-	useEffect(() => {
-		const getMoviesByName = async (name) => {
-			let apiKey = '62c9fe58';
-			// accessing the API
-			const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${name}`;
-			// Get an object of detailed information about the specified movie
-			const response = await fetch(url);
-			// return an array of movies with a matching title from OMDb API
-			const data = await response.json();
-			console.log(data);
+	const getMoviesByName = async (name) => {
+		let apiKey = '62c9fe58';
+		// accessing the API
+		const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${name}`;
+		// Get an object of detailed information about the specified movie
+		const response = await fetch(url);
+		// return an array of movies with a matching title from OMDb API
+		const data = await response.json();
+
+		// console.log(data);
+		if (data.Search) {
 			setMovieList(data.Search);
-		};
+		}
+	};
+
+	useEffect(() => {
 		getMoviesByName(searchMovie);
 	}, [searchMovie]);
 
