@@ -2,10 +2,7 @@ import MovieList from './MovieList';
 import { useState, useEffect } from 'react';
 import MyButton from '../style/StyledComponents';
 import styled from 'styled-components';
- 
-
- 
-
+// import MovieDetails from './MovieDetails';
 
 const API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
 
@@ -17,7 +14,7 @@ const FormInputWrapper = styled.div`
 export default function MovieSearchDisplay({ props }) {
 	const [movieList, setMovieList] = useState([]);
 	const [searchMovie, setSearchMovie] = useState('');
-	// const [modalActive, setModalActive] = useState(false);
+	// const[filmSpecifics, SetFilmSpecifics] = useState({});
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -55,7 +52,10 @@ export default function MovieSearchDisplay({ props }) {
 						minlength='1'
 						onChange={(event) => setSearchMovie(event.target.value)}
 					/>
-					<MyButton type='submit'>Submit</MyButton>
+					<MyButton normal type='submit'>
+						Submit
+					</MyButton>
+					{/* <MovieDetails /> */}
 				</FormInputWrapper>
 			</form>
 			<MovieList movieList={movieList} />

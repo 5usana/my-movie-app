@@ -1,5 +1,6 @@
-export default function MovieDetails({ props, selectedMovie }) {
+export default function MovieDetails({ props }) {
 	// console.log('This is:', selectedMovie);
+
 	return (
 		<div className='SingleMovieContainer'>
 			<div className='MovieCard'>

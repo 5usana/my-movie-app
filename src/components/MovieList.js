@@ -1,5 +1,6 @@
 import MovieCard from './MovieCard';
 import styled from 'styled-components';
+// import MovieDetails from './MovieDetails';
 
 const SearchedMoviesContainer = styled.div`
 	padding: 10px 0;
@@ -12,6 +13,7 @@ export default function MovieList({ movieList }) {
 			{movieList.map((movie) => (
 				<MovieCard movie={movie} />
 			))}
+			{/* <MovieDetails /> */}
 		</SearchedMoviesContainer>
 	);
 }
