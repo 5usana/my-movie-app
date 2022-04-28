@@ -26,7 +26,11 @@ export default function MovieCard(props) {
 			<img width='150px' src={props.movie.Poster} alt='Movie Poster' />
 			<MoviesCardTextDetails>
 				{props.movie.Title}
-				<Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+				<Modal
+					isModalOpen={isModalOpen}
+					setIsModalOpen={setIsModalOpen}
+					movieId={props.movie}
+				/>
 				<MyButton primary onClick={() => setIsModalOpen(true)}>
 					Movie
 				</MyButton>
